@@ -20,6 +20,7 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
 )
 doc_splits = text_splitter.split_documents(docs_list)
 
+# index the docs and persist in a local directory
 # vectorstore = Chroma.from_documents(
 #     documents=doc_splits,
 #     collection_name="rag-chroma",
@@ -27,6 +28,7 @@ doc_splits = text_splitter.split_documents(docs_list)
 #     persist_directory="./.chroma",
 # )
 
+# load the persisted vdb and create a retriever out of it
 retriever = Chroma(
     collection_name="rag-chroma",
     persist_directory="./.chroma",
