@@ -1,3 +1,4 @@
+# this script includes all the nodes and edges and connections between them in the graph:
 from dotenv import load_dotenv
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.checkpoint.sqlite import SqliteSaver
@@ -13,7 +14,6 @@ from graph.state import GraphState
 load_dotenv()
 memory = SqliteSaver.from_conn_string(":memory:")
 memory = MemorySaver()
-
 
 def decide_to_generate(state):
     print("---ASSESS GRADED DOCUMENTS---")
