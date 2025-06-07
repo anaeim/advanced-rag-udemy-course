@@ -26,3 +26,5 @@ grade_prompt = ChatPromptTemplate.from_messages(
 )
 
 retrieval_grader = grade_prompt | structured_llm_grader
+
+# retrieval_grade = retrieval_grader.binary_score
